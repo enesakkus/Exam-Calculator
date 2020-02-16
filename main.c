@@ -1,9 +1,9 @@
 #include<stdio.h>
 
-void printArray(size_t student, size_t exams, int studentGrades[][exams]);
-int minimum(size_t student, size_t exams, int studentGrades[][exams]);
-int maximum(size_t student, size_t exams, int studentGrades[][exams]);
-double average(size_t exams, int studentGrades[][exams], size_t i);
+void printArray(size_t student, size_t exams, const int studentGrades[][exams]);
+int minimum(size_t student, size_t exams, const int studentGrades[][exams]);
+int maximum(size_t student, size_t exams, const int studentGrades[][exams]);
+double average(size_t exams, const int studentGrades[][exams], size_t i);
 
 int main(void){
 
@@ -50,7 +50,7 @@ int main(void){
 }
 
 // determine minimum grade
-int minimum(size_t student, size_t exams, int studentGrades[][exams]){
+int minimum(size_t student, size_t exams, const int studentGrades[][exams]){
 
     int lowerGrade = 100;
     size_t i, j;
@@ -67,7 +67,7 @@ int minimum(size_t student, size_t exams, int studentGrades[][exams]){
 } //end function minimum
 
 //Determine maximum grade
-int maximum(size_t student, size_t exams, int studentGrades[][exams]){
+int maximum(size_t student, size_t exams, const int studentGrades[][exams]){
 
     int higherGrade = 0;
     size_t i, j;
@@ -84,7 +84,7 @@ int maximum(size_t student, size_t exams, int studentGrades[][exams]){
 } //end function maximum
 
 //Determine average grade
-double average(size_t exams, int studentGrades[][exams], size_t i){
+double average(size_t exams, const int studentGrades[][exams], size_t i){
 
     double total = 0;
     size_t j;
@@ -97,7 +97,7 @@ double average(size_t exams, int studentGrades[][exams], size_t i){
 } //end function average
 
 //Print array
-void printArray(size_t student, size_t exams, int studentGrades[][exams]){
+void printArray(size_t student, size_t exams, const int studentGrades[][exams]){
 
     size_t i, j;
 
@@ -105,7 +105,7 @@ void printArray(size_t student, size_t exams, int studentGrades[][exams]){
     puts("The array is:\n");
     printf("\t\t\t");
     //Header for exam numbers
-    for(i = 0; i < student; i++){
+    for(i = 0; i < exams; i++){
         printf("[%d]      ",i);
 
     } //end for
